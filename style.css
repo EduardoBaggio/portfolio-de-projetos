@@ -3,12 +3,13 @@
 :root {
     --cor-principal: #6E859F;
     --cor-secundaria: #284260;
-    --cor-destaque: #C92BFC;
+    --cor-destaque: #0d6efd; /* <<< ESSA COR FOI ALTERADA PARA AZUL */
 }
 
 body {
     font-family: 'Chakra Petch', sans-serif;
     color: var(--cor-principal);
+    background-color: #f8f9fa; /* Adicionei um fundo cinza bem claro para destacar os cards */
 }
 
 h1, h2, h5 {
@@ -19,13 +20,28 @@ h1, h2, h5 {
 .lead, .btn-link {
     color: var(--cor-destaque);
     font-weight: 700;
+    text-decoration: none; /* Garante que o botão não tenha sublinhado */
 }
 
-a, .btn-link:hover {
-    color: var(--cor-principal)
+/* Estilo para os links do rodapé (Instagram, WhatsApp) */
+footer a {
+    color: var(--cor-secundaria);
+    transition: color 0.3s ease; /* Adiciona uma transição suave */
 }
 
-a:hover{
+/* Efeito ao passar o mouse por cima dos links do rodapé e dos botões de projeto */
+footer a:hover, .btn-link:hover {
     color: var(--cor-destaque);
+    text-decoration: underline;
 }
 
+/* Ajustes no card do projeto para um visual mais limpo */
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de levantar o card ao passar o mouse */
+}
